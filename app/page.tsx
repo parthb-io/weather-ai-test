@@ -1,113 +1,322 @@
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
+import { Card, Text, Metric, Subtitle, Divider } from "@tremor/react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <div className="min-h-screen bg-gradient-to-r from-blue-800 to-indigo-900 p-10 flex flex-col justify-center">
+
+
+<section className="overflow-hidden" >
+  <section>
+  <nav className="relative py-6 bg-white rounded-full">
+    <div className="container mx-auto px-4 flex items-center">
+      <ul className="hidden lg:flex lg:w-1/3 lg:flex lg:items-center lg:w-auto lg:space-x-6">
+        <li><a className="text-sm  text-blue-600 font-bold " href="#">Home City</a></li>
+        <li className="text-gray-300">
+          <svg className="w-4 h-4 current-fill" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+          </svg>
+        </li>
+        <li><a className="text-sm text-gray-400 hover:text-gray-500 " href="#">About Us</a></li>
+        <li className="text-gray-300">
+          <svg className="w-4 h-4 current-fill" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+          </svg>
+        </li>
+        <li><a className="text-sm text-gray-400 hover:text-gray-500" href="#">Freebies</a></li>
+      </ul>
+      <div className="lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-y-1/2 lg:-translate-x-1/2">
+        <a className="text-3xl font-bold leading-none" href="#">
+          <img className="h-16" src="weatherAI-favicon.png" alt="" width="auto"/>
+          
+        </a>
+      </div>
+      <div className="hidden lg:ml-auto lg:block lg:w-1/3 text-right">
+        <a className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-l-xl rounded-t-xl transition duration-200" href="#">Sign In</a>
+      <a className="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200" href="#">Sign up</a>
+      </div>
+      <div className="lg:hidden ml-auto">
+        <button className="navbar-burger flex items-center text-blue-600 p-3">
+          <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Mobile menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div className="hidden navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
+    <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+    <nav className="relative flex flex-col py-6 px-6 h-full w-full bg-white border-r overflow-y-auto">
+      <div className="flex items-center mb-8">
+        <a className="mr-auto text-3xl font-bold leading-none" href="#">
+          <img className="h-10" src="atis-assets/logo/atis/atis-mono-black.svg" alt="" width="auto"/>
+        </a>
+        <button className="navbar-close">
+          <svg className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li className="mb-1"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-green-50 hover:text-green-600 rounded" href="#">Start</a></li>
+          <li className="mb-1"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-green-50 hover:text-green-600 rounded" href="#">Freebies</a></li>
+          <li className="mb-1"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-green-50 hover:text-green-600 rounded" href="#">About</a></li>
+        </ul>
+      </div>
+      <div className="mt-auto">
+        <div className="pt-6"><a className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-l-xl rounded-t-xl" href="#">Sign in</a><a className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-green-600 hover:bg-green-700 rounded-l-xl rounded-t-xl" href="#">Sign Up</a></div>
+        <p className="my-4 text-xs text-center text-gray-400">
+          <span>&copy; 2020 All rights reserved.</span>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+        <div className="text-center">
+          <a className="inline-block px-1" href="#">
+            <img src="atis-assets/social/facebook.svg" alt=""/>
+          </a>
+          <a className="inline-block px-1" href="#">
+            <img src="atis-assets/social/twitter.svg" alt=""/>
+          </a>
+          <a className="inline-block px-1" href="#">
+            <img src="atis-assets/social/instagram.svg" alt=""/>
           </a>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    </nav>
+  </div>
+  </section>
+  {/* hero-section */}
+  <div className="container mx-auto py-12 px-4">
+    <div className="flex flex-wrap justify-between -m-6 pt-32 pb-40">
+      <div className="w-full lg:w-5/12 xl:w-1/2 p-6">
+        <p className="mb-5 font-heading text-gray-400 font-medium text-lg">Your City, Your Forecast, Powered by Artificial Intelligence</p>
+        <h1 className="mb-14 font-heading text-4xl md:text-5xl xl:text-5xl text-white font-bold">Introducing AI-Powered Weather Forecasts, anywhere, anytime.</h1>
+        {/* <div className="flex flex-wrap -m-3 mb-20">
+          <div className="w-full lg:w-auto p-3">
+            <button className="font-heading w-full px-6 py-4 text-base text-gray-900 bg-white hover:bg-gray-100 rounded-md">Start 14 Days Free Trial</button>
+          </div>
+          <div className="w-full lg:w-auto p-3">
+            <button className="font-heading w-full px-6 py-4 text-base text-white bg-transparent border border-gray-500 hover:border-gray-600 rounded-md">How it works</button>
+          </div>
+        </div> */}
+        <div className="lg:max-w-md">
+          <div className="flex flex-wrap -m-3">
+            <div className="w-auto p-3">
+              <img className="w-14 h-14" src="gradia-assets/images/hero/avatar-man.png" alt=""/>
+            </div>
+            <div className="flex-1 p-3">
+              <p className="mb-4 text-gray-300 text-base">&ldquo;Sunshine is delicious, rain is refreshing, wind braces us up, snow is exhilarating; there is really no such thing as bad weather, only different kinds of good weather.&rdquo;</p>
+              <p className="font-heading text-white text-base">John Ruskin</p>
+            </div>
+          </div>
+        </div>
       </div>
+      <div className="w-full lg:w-7/12 xl:w-1/2 p-6">
+        <div className="max-w-max mx-auto">
+          <div className="flex flex-wrap justify-center -m-3 mb-3">
+            <div className="w-full p-3">
+              <div className="mx-auto w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Albert Flores</p>
+                    <p className="mb-2 text-sm text-gray-500">Software Engineer</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">New York City, USA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="flex flex-wrap justify-center max-w-max -m-3 mb-3">
+            <div className="w-1/2 p-3">
+              <div className="mx-auto w-auto lg:w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle2.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Darlene Robertson</p>
+                    <p className="mb-2 text-sm text-gray-500">Software Tester</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">Paris, France</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-1/2 p-3">
+              <div className="mx-auto w-auto lg:w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle3.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Kristin Watson</p>
+                    <p className="mb-2 text-sm text-gray-500">Project Manager</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">Pennsylvania, USA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center max-w-max -m-3 mb-3 xl:-ml-20">
+            <div className="w-1/2 p-3">
+              <div className="mx-auto w-auto lg:w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle4.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Guy Hawkins</p>
+                    <p className="mb-2 text-sm text-gray-500">Scrum Master</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">London, United Kingdom</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-1/2 p-3">
+              <div className="mx-auto w-auto lg:w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle5.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Annette Black</p>
+                    <p className="mb-2 text-sm text-gray-500">Software Engineer</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">Sydney, Australia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center max-w-max -m-3">
+            <div className="w-1/2 p-3">
+              <div className="mx-auto w-auto lg:w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Robert Fox</p>
+                    <p className="mb-2 text-sm text-gray-500">UI/UX Designer</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">Los Angeles, USA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-1/2 p-3">
+              <div className="mx-auto w-auto lg:w-64 p-3 bg-white transform hover:-translate-y-3 transition ease-out duration-1000 rounded-2xl">
+                <div className="flex flex-wrap -m-2">
+                  <div className="w-auto p-2">
+                    <img src="gradia-assets/images/hero/avatar-circle2.png" alt=""/>
+                  </div>
+                  <div className="w-auto p-2">
+                    <p className="font-heading text-base text-gray-900">Cody Fisher</p>
+                    <p className="mb-2 text-sm text-gray-500">Ethical Hacker</p>
+                    <div className="flex items-center px-2 py-1 bg-gray-100 rounded-full">
+                      <svg className="mr-1" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56413 9.02246C9.19416 9.39243 8.5298 10.0568 7.91404 10.6726C7.13299 11.4536 5.867 11.4536 5.08595 10.6725C4.4823 10.0689 3.82786 9.41446 3.43587 9.02246C1.7436 7.33019 1.7436 4.58648 3.43587 2.8942C5.12814 1.20193 7.87185 1.20193 9.56413 2.8942C11.2564 4.58648 11.2564 7.33019 9.56413 9.02246Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                        <path d="M8.125 5.95833C8.125 6.8558 7.39746 7.58333 6.5 7.58333C5.60253 7.58333 4.875 6.8558 4.875 5.95833C4.875 5.06087 5.60253 4.33333 6.5 4.33333C7.39746 4.33333 8.125 5.06087 8.125 5.95833Z" stroke="#71717A" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                      <p className="text-xs text-gray-700 font-medium">Tokyo, Japan</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-  )
+    </div>
+  </div>
+</section>
+
+
+
+      <Card className="max-w-7xl mx-auto justify-center">
+        {/* title */}
+        <Text className="text-6xl font-bold text-center mb-10">
+          Weather-AI{" "}
+        </Text>
+        {/* subtitle */}
+        <Subtitle className="text-xl text-center">
+          Powered by Open AI, Next.js 13.3, Tremor 2.0, Tailwind CSS + more!!
+        </Subtitle>
+        <Divider className="my-10" />
+
+        <Card className="bg-gradient-to-br from-[#394F68] to-[#183b7e]">
+          {/* city-picker compnent */}
+        </Card>
+      </Card>
+
+
+
+      {/* footer-starts */}
+      <section className="py-12 bg-transaprent">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto text-center">
+      <div className="pb-9 border-b border-blueGray-800">
+        <a className="inline-block mb-20" href="#">
+          <img className="block h-9" src="vendia-assets/logos/vendia.svg" alt=""/>
+        </a>
+        <div className="flex flex-wrap -mx-4 -mb-4 justify-center items-center">
+          <div className="w-1/2 md:w-auto px-4 xl:px-8 mb-4">
+            <a className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white hover:from-yellow-500 hover:via-green-300 hover:to-blue-500" href="#">Company</a></div>
+          
+          <div className="w-1/2 md:w-auto px-4 xl:px-8 mb-4">
+            <a className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white hover:from-yellow-500 hover:via-green-300 hover:to-blue-500" href="#">Freebies</a></div>
+          <div className="w-1/2 md:w-auto px-4 xl:px-8 mb-4">
+            <a className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white hover:from-yellow-500 hover:via-green-300 hover:to-blue-500" href="#">Help</a></div>
+          <div className="w-1/2 md:w-auto px-4 xl:px-8 mb-4">
+            <a className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white hover:from-yellow-500 hover:via-green-300 hover:to-blue-500" href="#">Privacy Policy</a></div>
+        </div>
+      </div>
+      <p className="mt-8 text-sm text-gray-400">Powered by &copy; 2023 bantsy.io | All Rights Reserved</p>
+    </div>
+  </div>
+</section>
+      {/* footer-ends */}
+
+
+
+    </div>
+  );
 }
